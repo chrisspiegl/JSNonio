@@ -1,0 +1,140 @@
+@import "mixins.less";
+@import "reset.less";
+@import "bootstrap.less";
+
+@square: 60px;
+@gridwidth: @square*9+5px*9*2+5px*2*9;
+
+@colorLink: #98CC96;
+@colorLinkHover: darken(@colorLink, 10);
+
+@colorFont: #FFE9A3;
+@colorBg: #191B28;
+
+@colorButtonFont: black;
+
+html {
+	.square(100%);
+	//#gradient > .vertical(@colorBg);
+	background-color: @colorBg;
+}
+
+body {
+	.size(auto, @gridwidth+20px);
+	.border();
+	.border-radius(20px);
+	margin: 2em auto;
+	color: @colorFont;
+	#gradient > .vertical(lighten(@colorBg, 10));
+}
+
+
+.mybutton(@width: @square, @padding: 5px){
+	.button(#eee, @colorButtonFont, 0 1px 1px rgba(255,255,255,.75), @width, @padding);
+}
+
+#grid {
+	width: @square*9+5px*2*9+5px*2*9;
+	.clearfix;
+	.center-block();
+	margin: 1em auto 1.5em;
+	a { text-decoration: none; }
+	div {
+		float: left;
+		display: block;
+		line-height: @square;
+		.square(@square);
+		.mybutton();
+		margin: 5px;
+	}
+	
+	.active div {
+		.buttonBackground(red, green);
+	}
+	.done div {
+		text-decoration: line-through;
+		.opacity(50);
+	}
+}
+
+#buttons {
+	text-align: center;
+	.center-block();
+	a {
+		margin: .5em .5em;
+		.mybutton(@square*1, .2em);
+	}
+}
+
+
+header {
+	margin-bottom: 2em;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+article {
+	margin-bottom: 2em;
+	border-bottom: 1px solid black;
+	padding: 0 2em;
+	a.hide {
+		.mybutton(@square/2, 5px);
+		.center-block();
+	}
+}
+
+footer {
+	margin-top: 2em;
+	border-top: 1px solid black;
+	text-align: center;
+}
+
+
+a {
+	color: @colorLink;
+	text-decoration: none;
+	&:hover {
+		color: @colorLinkHover;
+		text-decoration: none;
+	}
+}
+
+
+.debugmessage(@message, @color: rgb(255,255,0) ){
+	body:before{
+        content: @message;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        background: @color;
+				.opacity(50);
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        z-index: 99;
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width: 750px) {
+	//	.debugmessage("iPhone no matter what orientation");
+	
+	body { width: @square/2.5*9+2px*2*9+2px*2*9+20px; margin-top: .5em; }
+	
+	#grid {
+		width: @square/2.5*9+2px*2*9+2px*2*9;
+		div {
+			.square(@square/2.5);
+			.mybutton(@square/2.5, 2px);
+			margin: 2px;
+		}
+	}
+	
+	#buttons {
+		a {
+			margin: .5em .2em;
+			.mybutton(@square/2, .2em);
+		}
+	}
+}
