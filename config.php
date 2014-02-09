@@ -14,6 +14,7 @@ if(substr($_SERVER['HTTP_HOST'], strlen($_SERVER['HTTP_HOST'])-4, 4) != 'mint'){
 	define('ASSETSPATH', SITEURL.'_/');
 }
 
+date_default_timezone_set('Europe/Berlin');     // Set this to the timezone you can think in
 
 // NO EDITING DOWN HERE!
 if ( !defined('DOC_ROOT') )

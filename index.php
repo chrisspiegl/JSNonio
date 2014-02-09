@@ -3,20 +3,21 @@
 ?>
 
 <!doctype html>
-<html lang="en" manifest="NonioGameDotCom.appcache">
+<!-- <html lang="en" manifest="NonioGameDotCom.appcache"> -->
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	
-	
+
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link rel="apple-touch-icon" href="<?=ASSETSPATH;?>img/icon-v2.png"/>
 	<link rel="apple-touch-startup-image" href="<?=ASSETSPATH;?>img/icon-v2.png" />
-	
+
 	<link rel="stylesheet" href="<?=ASSETSPATH;?>css/style.css" type="text/css" media="screen, mobile" title="main" charset="utf-8">
-	
+
 	<title>NonioGame.com</title>
 </head>
 
@@ -67,7 +68,7 @@
 
 <!-- Asynchronous google analytics; this is the official snippet.
 	 Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
-	 
+
 <script>
 
   var _gaq = _gaq || [];
