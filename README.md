@@ -1,6 +1,14 @@
 JSNonio
 ===
 
+![current status](https://img.shields.io/badge/current%20status-halted-red?style=flat-square)
+
+## Halted Project
+
+I lost motivation to work on this for now. The code is here if you want to take a look.
+
+## About
+
 Little weekend project to implement Nonio in JS.
 
 License
